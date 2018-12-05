@@ -38,6 +38,15 @@ brotherinlaw(X,Y):-
     husband(X,Z),
     sister(Y,Z).
 
+sisterinlaw(X,Y):-
+    female(X),
+    wife(X,Z),
+    brother(Y,Z).
+
+sisterinlaw(X,Y):-
+    female(X),
+    wife(X,Z),
+    sister(Z,Y).
 
 male(jack).
 male(paul).
@@ -47,6 +56,7 @@ male(seth).
 
 female(kath).
 female(laura).
+female(ann).
 
 mother(kath, jack).
 
@@ -61,6 +71,8 @@ sister(laura,paul).
 
 husband(seth,laura).
 husband(paul,kath).
+husband(ann,kevin).
 
 wife(laura,seth).
 wife(kath,paul).
+wife(ann,kevin).

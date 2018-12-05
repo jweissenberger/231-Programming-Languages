@@ -38,6 +38,16 @@ brotherinlaw(X,Y):-
     husband(X,Z),
     sister(Y,Z).
 
+brotherinlaw(X,Y):-
+    male(X),
+    wife(Z,X),
+    brother(Y,Z).
+
+brotherinlaw(X,Y):-
+    male(X),
+    wife(Z,X),
+    sister(Z,Y).
+
 sisterinlaw(X,Y):-
     female(X),
     wife(X,Z),
@@ -47,6 +57,16 @@ sisterinlaw(X,Y):-
     female(X),
     wife(X,Z),
     sister(Z,Y).
+
+sisterinlaw(X,Y):-
+    female(X),
+    husband(Z,X),
+    brother(Y,Z).
+
+sisterinlaw(X,Y):-
+    female(X),
+    husband(Z,X),
+    sister(Y,Z).
 
 male(jack).
 male(paul).
