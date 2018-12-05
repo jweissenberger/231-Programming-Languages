@@ -28,13 +28,35 @@ uncle(X,Y):-
     parent(Z,Y),
     sister(Z,X).
 
+brotherinlaw(X,Y):-
+    male(X),
+    husband(X,Z),
+    brother(Y,Z).
+
+brotherinlaw(X,Y):-
+    male(X),
+    husband(X,Z),
+    sister(Y,Z).
+
+sisterinlaw(X,Y):-
+    female(X),
+    wife(X,Z),
+    brother(Y,Z).
+
+sisterinlaw(X,Y):-
+    female(X),
+    wife(X,Z),
+    sister(Z,Y).
+
 male(jack).
 male(paul).
 male(joe).
 male(kevin).
+male(seth).
 
 female(kath).
 female(laura).
+female(ann).
 
 mother(kath, jack).
 
@@ -46,3 +68,11 @@ brother(paul,kevin).
 brother(kevin,paul).
 
 sister(laura,paul).
+
+husband(seth,laura).
+husband(paul,kath).
+husband(ann,kevin).
+
+wife(laura,seth).
+wife(kath,paul).
+wife(ann,kevin).
