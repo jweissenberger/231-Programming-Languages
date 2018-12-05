@@ -1,0 +1,6 @@
+(defun reverse(L)
+  (cond
+   ((NULL L) nil)
+   (T (append (reverse (cdr L))))(LIST (car L))
+   )
+)
