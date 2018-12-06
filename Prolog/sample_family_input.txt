@@ -1,0 +1,16 @@
+Jack Weissenberger
+
+Sample inputs for the family tree.
+
+grandparent(X,jack).
+X = joe
+parent(X,jack).
+X = kath
+aunt(X,jack).
+X = laura
+uncle(X,jack).
+X = kevin
+brotherinlaw(X,paul).
+X = seth
+sisterinlaw(X,paul).
+X = ann

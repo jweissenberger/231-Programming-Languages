@@ -1,0 +1,12 @@
+mymember(X, [X|XS]).
+mymember(X, [Y|YS]):-
+    mymember(X,YS).
+
+union([],Z,Z).
+
+union([X|Y],Z,W):-
+    mymember(X,Z),
+    union(Y,Z,W).
+union([X|Y],Z,[X|W]):-
+    \+ mymember(X,Z),
+    union(Y,Z,W).
