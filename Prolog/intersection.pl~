@@ -1,0 +1,12 @@
+mymember(X, [X|XS]).
+mymember(X, [Y|YS]):-
+    mymember(X,YS).
+
+intersect([X|Y], M, [X|Z]):-
+    mymember(X,M),
+    intersect(Y,M,Z).
+intersect([X|Y],M,Z):-
+    \+ mymember(X,M),
+    intersect(Y,M,Z).
+intersect([],M,[]).
+
